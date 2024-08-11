@@ -2,6 +2,9 @@ import { useState } from "react"
 import "../Auth.css"
 import axios from "../../../api"
 import { useNavigate } from "react-router-dom"
+
+import avatar from "../../../images/avatar1.svg"
+
 const Login = () => {
   const [name, setName] = useState("")
   const [password, setPassword] = useState("")
@@ -31,10 +34,15 @@ const Login = () => {
 
   return (
     <div className="login__container"> 
+    
       <form onSubmit={handleFormSubmit} className='form__content'>
-        <input  onChange={(e) => setName(e.target.value)}  type="text" placeholder='Enter username' />
-        <input onChange= {(e) => setPassword(e.target.value)} type="text" placeholder='Enter password' />
-        <button type='submit'>loading</button>
+      <h2 className="login_title">Login</h2>
+      
+        
+        <input  className="inputs" onChange={(e) => setName(e.target.value)}  type="text" placeholder='Enter username' />
+        <input className="inputs" onChange= {(e) => setPassword(e.target.value)} type="text" placeholder='Enter password' />
+        <button className="btn" type='submit'>loading</button>
+        <img className="avatar" src={avatar} alt="" />
       </form>
     </div>
   )
