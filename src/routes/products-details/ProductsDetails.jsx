@@ -24,6 +24,7 @@ const ProductsDetails = () => {
            <div>
              <h2>{products?.title}</h2>
             <p>{  products?.description}</p>
+            <span>{products?.price}</span>
            </div>
         }
     </div>
