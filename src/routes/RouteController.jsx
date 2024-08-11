@@ -1,15 +1,30 @@
 import { Routes, Route } from "react-router-dom"
-import Register from "./register/Register"
-import Login from "./login/Login"
-import Home from "./homepage/Home"
+import { Suspense, lazy } from "react"
+
+
+const Home = lazy(() => import("./home/Home"))
+const Auth = lazy(() => import("./auth/Auth"))
+const ProductsDetails = lazy(()=> import("./products-details/ProductsDetails"))
+
+const Login = lazy(() => import("./auth/login/Login"))
+const Register = lazy(() => import("./auth/register/Register"))
+
+
+
 
 const RouteController = () => {
   return (
-    <Routes>
-        <Route path="home" element= {<Home/>} />
-        <Route path="/register" element= {<Register/>} />
-        <Route path="/login" element= {<Login/>} />
+   <Suspense fallback={<div >Loading...</div>}>
+     <Routes>
+        <Route path="" element= {<Home/>} />
+        <Route path="/auth" element={<Auth/>}>
+          <Route path="login" element= {<Login/>}/>
+          <Route path="register" element= {<Register/>}/>
+        </Route>
+
+            <Route path="/product-details/:id"element={<ProductsDetails/>} />
     </Routes>
+   </Suspense>
   )
 }
   
