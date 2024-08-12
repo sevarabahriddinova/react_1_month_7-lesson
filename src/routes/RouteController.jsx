@@ -14,7 +14,7 @@ const Register = lazy(() => import("./auth/register/Register"))
 
 const RouteController = () => {
   return (
-   <Suspense fallback={<div className="loading">Loading....</div>}>
+   <Suspense fallback={<div className="loading">Loading...</div>}>
      <Routes>
         <Route path="" element= {<Home/>} />
         <Route path="/auth" element={<Auth/>}>

@@ -4,7 +4,8 @@ import axios from '../../api/index'
 import model from "../../images/model.jpg"
 import search from '../../images/search.svg'
 import avt from '../../images/avt.svg'
-
+import { Link } from 'react-router-dom'
+ 
 
 const Home = () => {
 
@@ -49,7 +50,7 @@ const Home = () => {
             <img className='nav__images' src={model} alt="" />
             <h2 className='nav__img__title'>New collection</h2>
             <p className='nav__img__text'>women's clothing 2024</p>
-            <a className='product__link' href="http://localhost:5173/auth/login">Shop Now</a>
+            <Link className='product__link' to="auth/login">Shop Now</Link>
           </div>  
       </div>
       <Products products={products} />

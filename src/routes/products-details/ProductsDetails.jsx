@@ -28,10 +28,9 @@ const ProductsDetails = () => {
               </div>
             
               <div className='details__subtitle'>
-                <p className='details__text'> {products?.description.slice(0,190)}</p>
-                <h2 className='details__text'>{products?.title.slice(0,40)}</h2>
+                <p className='details__text'>{  products?.description.slice(0,190)}</p>
+                <h2 className='details__text1'>{products?.title.slice(0,40)}</h2>
                 <div className='span__wrapper'>
-                <img src={yulduz} alt="" /> 
                 <span className='span'> {products?.price}</span>   
                 </div>
               </div>
